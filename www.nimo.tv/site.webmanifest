@@ -1,0 +1,21 @@
+{
+  "name": "Nimo TV",
+  "short_name": "Nimo TV",
+  "start_url": "/",
+  "icons": [
+      {
+          "src": "//www.nimo.tv/nms/images/android-chrome-192x192.c9fbdad602d2e02de34f00a30ba96e05.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "//www.nimo.tv/nms/images/android-chrome-512x512.2b719e827106cf5a88081366598dbdd3.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ],
+  "theme_color": "#1e1e1e",
+  "background_color": "#000000",
+  "display": "minimal-ui",
+  "gcm_sender_id": "103953800507"
+}

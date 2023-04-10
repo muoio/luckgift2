@@ -1,0 +1,7 @@
+.nimo-svga-gift {
+  position: relative;
+}
+.nimo-svga-gift canvas {
+  left: 0;
+  position: absolute;
+}

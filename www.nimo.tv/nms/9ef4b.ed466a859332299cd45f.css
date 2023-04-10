@@ -1,0 +1,720 @@
+.nimo-image {
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.nimo-image > img,
+.nimo-image > picture img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+@supports (not (-webkit-hyphens: none)) and (not (-moz-appearance: none)) and
+  (list-style-type: "*") {
+  .nimo-image img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+.nm-tabs {
+  -webkit-box-flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.nm-tabs-tab-bar-underline {
+  height: 3px;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nm-tabs-tab-bar.animated .nimo-m_tabs-tab-bar_inner {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1),
+    -webkit-transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  will-change: transform;
+}
+.nm-tabs-tab-bar-next-shadow,
+.nm-tabs-tab-bar-pre-shadow {
+  content: " ";
+  display: block;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 59px;
+  z-index: 1;
+}
+.nm-tabs-tab-bar-pre-shadow {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#fff),
+    to(hsla(0, 0%, 100%, 0))
+  );
+  background: linear-gradient(90deg, #fff, hsla(0, 0%, 100%, 0));
+  left: 0;
+}
+.nm-tabs-tab-bar-next-shadow {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(hsla(0, 0%, 100%, 0)),
+    to(#fff)
+  );
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff);
+  right: 0;
+}
+.nm-tabs-tab-content {
+  -webkit-box-flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.nm-tabs-tab-content.animated {
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nm-tabs-tab-pane-item {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.nm-tabs-tab-pane-item_hide {
+  height: 0;
+  overflow: visible;
+}
+.nm-tabs-tab-pane-item_active {
+  height: auto;
+}
+.nm-tabs.nm-tabs-secondary .nm-tabs-tab-bar-underline {
+  background-color: #000;
+  border-radius: 2px;
+}
+.nimo-theme-dark .nm-tabs-tab-bar-pre-shadow {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#1a1a1a),
+    to(rgba(26, 26, 26, 0))
+  );
+  background: linear-gradient(90deg, #1a1a1a, rgba(26, 26, 26, 0));
+}
+.nimo-theme-dark .nm-tabs-tab-bar-next-shadow {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(26, 26, 26, 0)),
+    to(#1a1a1a)
+  );
+  background: linear-gradient(90deg, rgba(26, 26, 26, 0), #1a1a1a);
+}
+.nimo-theme-dark .nm-tabs.nm-tabs-secondary .nm-tabs-tab-bar-underline {
+  background-color: #fff;
+}
+.nimo-tooltip {
+  display: block;
+  position: absolute;
+  visibility: visible;
+  z-index: 1060;
+}
+.nimo-tooltip-hidden {
+  display: none;
+}
+.nimo-tooltip-placement-top,
+.nimo-tooltip-placement-topLeft,
+.nimo-tooltip-placement-topRight {
+  padding-bottom: 8px;
+}
+.nimo-tooltip-placement-right,
+.nimo-tooltip-placement-rightBottom,
+.nimo-tooltip-placement-rightTop {
+  padding-left: 8px;
+}
+.nimo-tooltip-placement-bottom,
+.nimo-tooltip-placement-bottomLeft,
+.nimo-tooltip-placement-bottomRight {
+  padding-top: 8px;
+}
+.nimo-tooltip-placement-left,
+.nimo-tooltip-placement-leftBottom,
+.nimo-tooltip-placement-leftTop {
+  padding-right: 8px;
+}
+.nimo-tooltip-inner {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  font-size: 12px;
+  max-width: 250px;
+  padding: 8px 12px;
+  text-align: left;
+  text-decoration: none;
+}
+.nimo-tooltip-arrow {
+  border-color: transparent;
+  border-style: solid;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.nimo-tooltip-placement-top .nimo-tooltip-arrow,
+.nimo-tooltip-placement-topLeft .nimo-tooltip-arrow,
+.nimo-tooltip-placement-topRight .nimo-tooltip-arrow {
+  border-top-color: rgba(0, 0, 0, 0.8);
+  border-width: 5px 5px 0;
+  bottom: 3px;
+}
+.nimo-tooltip-placement-top .nimo-tooltip-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.nimo-tooltip-placement-topLeft .nimo-tooltip-arrow {
+  left: 16px;
+}
+.nimo-tooltip-placement-topRight .nimo-tooltip-arrow {
+  right: 16px;
+}
+.nimo-tooltip-placement-right .nimo-tooltip-arrow,
+.nimo-tooltip-placement-rightBottom .nimo-tooltip-arrow,
+.nimo-tooltip-placement-rightTop .nimo-tooltip-arrow {
+  border-right-color: rgba(0, 0, 0, 0.8);
+  border-width: 5px 5px 5px 0;
+  left: 3px;
+}
+.nimo-tooltip-placement-right .nimo-tooltip-arrow {
+  margin-top: -5px;
+  top: 50%;
+}
+.nimo-tooltip-placement-rightTop .nimo-tooltip-arrow {
+  top: 8px;
+}
+.nimo-tooltip-placement-rightBottom .nimo-tooltip-arrow {
+  bottom: 8px;
+}
+.nimo-tooltip-placement-left .nimo-tooltip-arrow,
+.nimo-tooltip-placement-leftBottom .nimo-tooltip-arrow,
+.nimo-tooltip-placement-leftTop .nimo-tooltip-arrow {
+  border-left-color: rgba(0, 0, 0, 0.8);
+  border-width: 5px 0 5px 5px;
+  right: 3px;
+}
+.nimo-tooltip-placement-left .nimo-tooltip-arrow {
+  margin-top: -5px;
+  top: 50%;
+}
+.nimo-tooltip-placement-leftTop .nimo-tooltip-arrow {
+  top: 8px;
+}
+.nimo-tooltip-placement-leftBottom .nimo-tooltip-arrow {
+  bottom: 8px;
+}
+.nimo-tooltip-placement-bottom .nimo-tooltip-arrow,
+.nimo-tooltip-placement-bottomLeft .nimo-tooltip-arrow,
+.nimo-tooltip-placement-bottomRight .nimo-tooltip-arrow {
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  border-width: 0 5px 5px;
+  top: 3px;
+}
+.nimo-tooltip-placement-bottom .nimo-tooltip-arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+.nimo-tooltip-placement-bottomLeft .nimo-tooltip-arrow {
+  left: 16px;
+}
+.nimo-tooltip-placement-bottomRight .nimo-tooltip-arrow {
+  right: 16px;
+}
+.nimo-theme-dark .nimo-tooltip-inner {
+  background-color: hsla(0, 0%, 100%, 0.8);
+  color: #000;
+}
+.nimo-theme-dark .nimo-tooltip-placement-top .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-topLeft .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-topRight .nimo-tooltip-arrow {
+  border-top-color: hsla(0, 0%, 100%, 0.8);
+}
+.nimo-theme-dark .nimo-tooltip-placement-right .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-rightBottom .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-rightTop .nimo-tooltip-arrow {
+  border-right-color: hsla(0, 0%, 100%, 0.8);
+}
+.nimo-theme-dark .nimo-tooltip-placement-left .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-leftBottom .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-leftTop .nimo-tooltip-arrow {
+  border-left-color: hsla(0, 0%, 100%, 0.8);
+}
+.nimo-theme-dark .nimo-tooltip-placement-bottom .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-bottomLeft .nimo-tooltip-arrow,
+.nimo-theme-dark .nimo-tooltip-placement-bottomRight .nimo-tooltip-arrow {
+  border-bottom-color: hsla(0, 0%, 100%, 0.8);
+}
+.nimo-popover {
+  cursor: auto;
+  font-weight: 400;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  white-space: normal;
+  z-index: auto;
+}
+.nimo-popover:after {
+  background: hsla(0, 0%, 100%, 0.01);
+  content: "";
+  position: absolute;
+}
+.nimo-popover-hidden {
+  display: none;
+}
+.nimo-popover-placement-top,
+.nimo-popover-placement-topLeft,
+.nimo-popover-placement-topRight {
+  padding-bottom: 10px;
+}
+.nimo-popover-placement-top .nimo-popover-inner,
+.nimo-popover-placement-topLeft .nimo-popover-inner,
+.nimo-popover-placement-topRight .nimo-popover-inner {
+  border-bottom-width: 2px;
+}
+.nimo-popover-placement-right,
+.nimo-popover-placement-rightBottom,
+.nimo-popover-placement-rightTop {
+  padding-left: 10px;
+}
+.nimo-popover-placement-right .nimo-popover-inner,
+.nimo-popover-placement-rightBottom .nimo-popover-inner,
+.nimo-popover-placement-rightTop .nimo-popover-inner {
+  border-left-width: 2px;
+}
+.nimo-popover-placement-bottom,
+.nimo-popover-placement-bottomLeft,
+.nimo-popover-placement-bottomRight {
+  padding-top: 10px;
+}
+.nimo-popover-placement-bottom .nimo-popover-inner,
+.nimo-popover-placement-bottomLeft .nimo-popover-inner,
+.nimo-popover-placement-bottomRight .nimo-popover-inner {
+  border-top-width: 2px;
+}
+.nimo-popover-placement-left,
+.nimo-popover-placement-leftBottom,
+.nimo-popover-placement-leftTop {
+  padding-right: 10px;
+}
+.nimo-popover-placement-left .nimo-popover-inner,
+.nimo-popover-placement-leftBottom .nimo-popover-inner,
+.nimo-popover-placement-leftTop .nimo-popover-inner {
+  border-right-width: 2px;
+}
+.nimo-popover-inner {
+  background-clip: padding-box;
+  border: 0 solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.nimo-popover-title {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  color: #1e1e1e;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-weight: 500;
+  margin: 0;
+  min-height: 32px;
+  min-width: 177px;
+  padding: 5px 20px 4px;
+}
+.nimo-popover-inner-content {
+  color: #000;
+  padding: 10px 20px;
+}
+.nimo-popover-message {
+  color: #000;
+  font-size: 18px;
+  padding: 8px 0 20px;
+}
+.nimo-popover-message > .nimo-icon {
+  color: #ffc000;
+  line-height: 1.6;
+  position: absolute;
+}
+.nimo-popover-message-title {
+  text-align: center;
+}
+.nimo-popover-buttons {
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 240px;
+  text-align: center;
+}
+.nimo-popover-buttons button {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-left: 8px;
+  min-width: 0;
+  width: 50%;
+}
+.nimo-popover-buttons button:first-child {
+  margin-left: 0;
+}
+.nimo-popover-arrow,
+.nimo-popover-arrow:after {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topLeft > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topRight > .nimo-popover-content > .nimo-popover-arrow {
+  bottom: 3px;
+  box-shadow: none;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow:after,
+.nimo-popover-placement-topLeft > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-topRight > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after {
+  border-color: #ffc000 transparent transparent;
+  border-width: 8px 10px 0;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow:after,
+.nimo-popover-placement-topLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-topRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after {
+  border-color: #fff transparent transparent;
+  left: -10px;
+  top: -10px;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topLeft > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topRight > .nimo-popover-content > .nimo-popover-arrow {
+  border-bottom: 0 solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top-color: inherit;
+  border-top-style: solid;
+  border-top-width: 8px;
+  bottom: 4px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  width: 0;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.nimo-popover-placement-topLeft > .nimo-popover-content > .nimo-popover-arrow {
+  left: 16px;
+}
+.nimo-popover-placement-topRight > .nimo-popover-content > .nimo-popover-arrow {
+  left: auto;
+  right: 16px;
+}
+.nimo-popover-placement-right > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-rightBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-rightTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-style: solid;
+  border-width: 10px 8px 10px 0;
+  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
+  left: 4px;
+}
+.nimo-popover-placement-right > .nimo-popover-content > .nimo-popover-arrow {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.nimo-popover-placement-rightTop > .nimo-popover-content > .nimo-popover-arrow {
+  top: 12px;
+}
+.nimo-popover-placement-rightBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  bottom: 12px;
+}
+.nimo-popover-placement-bottom > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+  top: 2px;
+}
+.nimo-popover-placement-bottom > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-bottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after {
+  border-color: transparent transparent #ffc000;
+  border-width: 0 8px 10px 10px;
+}
+.nimo-popover-placement-bottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after,
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow:after {
+  border-color: transparent transparent #fff;
+  bottom: -12px;
+  content: "";
+  left: -10px;
+  position: absolute;
+}
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  left: 16px;
+}
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-bottom-color: inherit;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+  border-top-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  right: 16px;
+  top: 3px;
+}
+.nimo-popover-placement-left > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-leftBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-leftTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-style: solid;
+  border-width: 10px 0 10px 8px;
+  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
+  right: 4px;
+}
+.nimo-popover-placement-left > .nimo-popover-content > .nimo-popover-arrow {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.nimo-popover-placement-leftTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-bottom-color: inherit;
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 0 solid transparent;
+  box-shadow: none;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
+  width: 0;
+}
+.nimo-popover-placement-leftBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  bottom: 12px;
+}
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-style: solid;
+  box-shadow: none;
+}
+.nimo-popover-placement-bottom > .nimo-popover-content > .nimo-popover-arrow {
+  border-bottom-color: inherit;
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 0 solid transparent;
+  box-shadow: none;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 4px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+}
+.nimo-popover-content {
+  border-color: inherit;
+}
+.nimo-popover-inner {
+  background-color: #fff;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+.nimo-popover-inner .nimo-btn-default {
+  background-color: #f0f0f0;
+  border-color: #dcdcdc;
+  color: #5a5a5a;
+}
+.nimo-popover-inner .nimo-btn-primary {
+  background-color: #ffc000;
+  color: #fff;
+}
+.nimo-popover-message-title {
+  color: #000;
+}
+.nimo-popover-placement-bottom > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-leftTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-color: transparent transparent #fff;
+}
+.nimo-popover-placement-top > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topLeft > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-topRight > .nimo-popover-content > .nimo-popover-arrow {
+  border-color: #fff transparent transparent;
+}
+.nimo-popover-placement-right > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-rightBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-rightTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-color: transparent #fff transparent transparent;
+}
+.nimo-popover-placement-left > .nimo-popover-content > .nimo-popover-arrow,
+.nimo-popover-placement-leftBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-popover-placement-leftTop > .nimo-popover-content > .nimo-popover-arrow {
+  border-color: transparent transparent transparent #fff;
+}
+.nimo-theme-dark
+  .nimo-popover-placement-bottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-bottomLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-bottomRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-leftTop
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-color: transparent transparent #1a1a1a;
+}
+.nimo-theme-dark
+  .nimo-popover-placement-top
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-topLeft
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-topRight
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-color: #1a1a1a transparent transparent;
+}
+.nimo-theme-dark
+  .nimo-popover-placement-right
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-rightBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-rightTop
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-color: transparent #1a1a1a transparent transparent;
+}
+.nimo-theme-dark
+  .nimo-popover-placement-left
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-leftBottom
+  > .nimo-popover-content
+  > .nimo-popover-arrow,
+.nimo-theme-dark
+  .nimo-popover-placement-leftTop
+  > .nimo-popover-content
+  > .nimo-popover-arrow {
+  border-color: transparent transparent transparent #1a1a1a;
+}
+[dir="rtl"] .nimo-popover {
+  text-align: right;
+}
+[dir="rtl"] .nimo-popover-buttons button {
+  margin-left: 0;
+  margin-right: 8px;
+}

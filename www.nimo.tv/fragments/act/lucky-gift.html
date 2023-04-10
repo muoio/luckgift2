@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      http-equiv="origin-trial"
+      content="AnsYCFE5h5x+76sOQIhDFsjD8/B3dqBsufFWYR95rJe0ZRjBV1s0t8s9JWaXzlXzQz80K9k3dsgXv6Jw0YKKOAYAAABxeyJvcmlnaW4iOiJodHRwczovL25pbW8udHY6NDQzIiwiZmVhdHVyZSI6IlVucmVzdHJpY3RlZFNoYXJlZEFycmF5QnVmZmVyIiwiZXhwaXJ5IjoxNjg4MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0="
+    />
+    <meta name="renderer" content="webkit" />
+    <meta
+      name="description"
+      content="Nimo TV is a leading game live streaming platform around the world. Watch the hottest PC games live stream, mobile games live stream, and esports live now."
+    />
+
+    <script src="./www.nimo.tv/nms/lib/browser-ua.9edbacdcd3dbe39d522f.js"></script>
+
+    <title>Nimo TV - Professional Game Live Streaming Platform</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <link
+      rel="apple-touch-icon"
+      href="./www.nimo.tv/nms/images/apple-touch-icon.67a0300e238e3718b383b6b3b46fb3b8.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./www.nimo.tv/nms/images/favicon-32x32.4c79d7892d1f5a3bf7430e2e2f4bec35.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./www.nimo.tv/nms/images/favicon-16x16.702cde8557235a09d89ceaea02b6e97d.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="//www.nimo.tv/nms/c359fae6d149bed82c55cb67883bad9c.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#00a300" />
+    <meta name="theme-color" content="#1e1e1e" />
+    <meta name="google" content="notranslate" />
+    <meta property="fb:app_id" content="161285164570410" />
+    <script>
+      var G_defaultAvatarSrc =
+        "//www.nimo.tv/nms/images/avatar-60x60.7a14dec9afa720be41ba31efaa3aadd4.jpg";
+      var G_defaultScreenShot =
+        "//www.nimo.tv/nms/images/screen-285x160.0b1ba38197bcde68c8361783b402b0b3.jpg";
+      var nimo_base = {};
+      nimo_base.headerNav = "";
+      nimo_base.hasMulTheme = "1";
+      nimo_base.pathKeyword = "";
+    </script>
+
+    <script>
+      window.__NIMO_APP_DATA__ = {
+        country: "VN",
+        platform: "desktop",
+        lang: "1033",
+        theme: "2",
+        version: "home.fragments.lucky-gift.bb14ff0550",
+      };
+    </script>
+
+    <script>
+      !(function () {
+        var e,
+          t,
+          n,
+          i,
+          a = { passive: !0, capture: !0 },
+          r = new Date(),
+          o = function () {
+            (i = []), (t = -1), (e = null), p(addEventListener);
+          },
+          c = function (i, a) {
+            e ||
+              ((e = (function (e) {
+                return e && e.target instanceof HTMLElement
+                  ? {
+                      type: e.type,
+                      target: e.target.cloneNode(),
+                      cancelable: e.cancelable,
+                      timeStamp: e.timeStamp,
+                    }
+                  : e;
+              })(a)),
+              (t = i),
+              (n = new Date()),
+              p(removeEventListener),
+              u());
+          },
+          u = function () {
+            if (t >= 0 && t < n - r) {
+              var a = {
+                entryType: "first-input",
+                name: e.type,
+                target: e.target,
+                cancelable: e.cancelable,
+                startTime: e.timeStamp,
+                processingStart: e.timeStamp + t,
+              };
+              i.forEach(function (e) {
+                e(a);
+              }),
+                (i = []);
+            }
+          },
+          l = function (e) {
+            if (e.cancelable) {
+              var t =
+                (e.timeStamp > 1e12 ? new Date() : performance.now()) -
+                e.timeStamp;
+              "pointerdown" == e.type
+                ? (function (e, t) {
+                    var n = function () {
+                        c(e, t), r();
+                      },
+                      i = function () {
+                        r();
+                      },
+                      r = function () {
+                        removeEventListener("pointerup", n, a),
+                          removeEventListener("pointercancel", i, a);
+                      };
+                    addEventListener("pointerup", n, a),
+                      addEventListener("pointercancel", i, a);
+                  })(t, e)
+                : c(t, e);
+            }
+          },
+          p = function (e) {
+            ["mousedown", "keydown", "touchstart", "pointerdown"].forEach(
+              function (t) {
+                return e(t, l, a);
+              }
+            );
+          },
+          s = "hidden" === document.visibilityState ? 0 : 1 / 0;
+        addEventListener(
+          "visibilitychange",
+          function e(t) {
+            "hidden" === document.visibilityState &&
+              ((s = t.timeStamp),
+              removeEventListener("visibilitychange", e, !0));
+          },
+          !0
+        );
+        o(),
+          (self.webVitals = {
+            firstInputPolyfill: function (e) {
+              i.push(e), u();
+            },
+            resetFirstInputPolyfill: o,
+            get firstHiddenTime() {
+              return s;
+            },
+          });
+      })();
+    </script>
+    <script>
+      !(function () {
+        window.__HBI__ = {
+          ext: {
+            country_flg: "VN",
+            cdn: "aws",
+            page_type: "lucky-gift",
+            load_diff: window.__NM_DIFF__,
+            slug:
+              location.host.replace(/.nimo.tv$/, "") +
+              "/" +
+              location.pathname
+                .replace(/\d+/g, ":id")
+                .replace(/^\/|\/$/g, "")
+                .replace(/\//g, "-"),
+            abtest: "",
+            temp: "",
+          },
+          id: 27,
+          rpurl: "https://metric.nimo.tv",
+          tti: false,
+          fid: true,
+          lcp: true,
+          cls: true,
+          log: false,
+          getUA: function () {
+            return window.__NIMO_UA__ && __NIMO_UA__;
+          },
+        };
+        var script = document.createElement("script");
+        script.src = "/nms/lib/hbi-3.0.4.js";
+        script.async = true;
+        document.head.appendChild(script);
+      })();
+    </script>
+
+    <style>
+      .nm-logo {
+        background: url("data:image/png;base64,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")
+          no-repeat center/contain;
+      }
+      .nimo-theme-dark .nm-logo {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPIAAABACAMAAAAXtNroAAAApVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+4/eNVAAAANnRSTlMAmu6xuIE/RfvlI97FCEzqVBxQN8oCE/j0DcChKI3Y0m8E4bWsaWK9p1zOLReUiHvwdUk8VzMa5A6zAAAGW0lEQVRo3uWb2XaqMBRAjzNaKdIyKqNFxHlqz/9/2r0l0UjILZIXF737qXYxbZOcIaXwOCM/dKZ9+H+4JAr+xdnA/0G8MpAyhv8B6zDEGw78fjYtG+8Ywm/ndYlFlvCrcRcB8uzgF6P7bWTMTz38JoLfitlPFGSMJyYQ5U/4VXif0b41m2VJMtWQoWRf8JeMhK9sNpvtDulAhcbj+QGK0PY65KyxgNNJY2gy+kxBEWGqAsVBnpcVyDGaBeNDDE8ltVHExwBu6ChgupVK9U4eH0x4HvEOBRx3XmFkUMT8C+ozxpwFPI8ZMhTbOba1YNl65eNTL5gPNa19dGwFGU59Z5Wen8HTOFxtO6nnwiPE+mX/ch3nbW1luopm8CwGSEg8qIOZarK9VRdzVvAkzIAMcQR10Q3JRx8NnzuvF5iTQn3cNZnaKtTE6nWzFTwNsiZ9kEFv02FuFBtSYrkgxSk/uwONgjQLB5BDPeaJqln1NomeHkjAeo13/pvYz7WZBRyroJ2Qen2btV8iIHwuwxaf56xduORaNj3qhJoyXCcpf13zZLwIGUcm/wTGdAEQst0d+eA3EdU2gSVIhuv8IQ3WeZ/y+4+KEX3Oz7z+GG8onQ03TwUIM/8b/uUEeQAyoIQp3uk8cYv+VbRvYGGOoQpqvM0tfoT5oaQsCVxguCFRs4Cy/cACSuv+8Dn+m37h6fMj54DfdPnss9Oc7gZ4PKO0EfSen9+DAv1rV2LCHWQXbXD7ntr3dVCXHWpeBc/XewyRJ7ybFgEKKQfWT/y3sjnN2wodikQ2l82qlLEFd0xFym/lQ3dImdAFYWMZzWMLFP+NMip1My2h8kC0s6fmgS5z6yhj72FlTCyyKBIsKnttvGJrCuvVLfa4rU7OkhxEPnRt3uELczyhciTavz3Tfq+WMi4eVsa2/3Z584kgU1aD61xe6ACmdyJLlz0z394OC4H16HKxpAtC5bNolLfa92Otaiorb1XKPJzyiQ7wwgSCeo3Qrz8rq1oxsm5tcv+yMksizojLjF0ybLWU0b4AZSmjbJFRd96B8amQKG+KlYvJ68UsfAxBrAzW7KiMv4Bn4SDOaipj25NWZk3Pm6jB7/+svLXvT43JoKdMmcdU6fSY+AuXXTTreHWVca5XTuz1Hu/x1zflrqiIjwNu4QmVoUW25+7juqZyymXc8fdFUhMYDyuv+zYNPG6V8gekDl5xUuhclV0yhy9QJCVztkJ5gzmbuy3pHlQq+0ifXkJ5DBOaU6ZqxcT+ANi2jkS4pQNT9sjYmCAq7xTzZ2XosqrzQgLLtlp5jJSOJ6EMERISs2qU/6Keo310VgHulAf0SjxkYeoVygPiaQFAQsuQamWDZRvfqq8M1zW6qxplRkF5IljKrMjcVChDeO2MdYWdUKnMaEdxbWXIkHCSUWZX4iGpa1ulnJLfxLCnmjWUCZ24tnK8RMJKRplatPn76lVruViOrFTyFZ3rK2NUU5l1gqi8GhLK6rVkElXEAVQp0/pjfaDHSyh36iuDPkeKhDL9aQoFVHLJfbWyZSMjlVH2JZRJKySrnNKnFaXO92plaOENTZVQbm9klKFvyyu7Gl0W5UbPgAeUPbzRg/rK4RdIKcNEkVRmRbbSU4FgXQeuX6HMyhFahtRW1hYmSCpDJK9srpEw7L1bptX3j0jI4CHlAdv6q6ls+y6AtDL40sqgD1HE2n1MGUIkbB5UTpCQjGRq7DsyaWX4ouMqbM+qlVO2xVOpzCKPcQGCvHI8RcJFpNwRKLMm2QsqX9jglcvlyBluOCzvCZ2nznoFPLzdSVQczQDKm9OOewujRq4jzLD74lR0uXd3nH0MAlxFGMgPfNnyQjpPWVbsT4/cNFa4tKnndzqxUZzclo6mA5T32RJgeInNhFv6T8vwBByWxt7QY4274oIke2FBGPfGnQtwWL7RpXdWD+POmR66yPyygu5ni7g4hJNWNxyuP3akvRTiZo7WgxJf3fWiXJ58giQBbVybxCstYiVgWz7QKFSHbgpLYdAevFmQma3p8itZGUGz0MkwhxLOUVPfSu/RGvoM9bBmmHO0oGmoBhKWLP5XMzq0kTCB5rGdI8UZJ61HmHXz5NTI2EXw5iiND83EmqIcdsPecrsjPhxRgmmj/wPS2mtYk/EAGo558ZdhGx9BmRtJuoVm8gdWp9DbyVMtvQAAAABJRU5ErkJggg==")
+          no-repeat center/contain;
+      }
+    </style>
+    <link
+      href="//www.nimo.tv/nms/home.fragments.lucky-gift.e794209013cb793d6683.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="nimo-theme-dark page-lucky-gift">
+    <div id="page-lucky-gift-container"></div>
+    <script>
+      function q(variable) {
+        var query = location.search.substring(1);
+        var vars = query.split("&");
+        var val = "";
+        for (var i = 0; i < vars.length; i++) {
+          var parts = vars[i].split("="),
+            k = parts[0],
+            v = parts[1];
+          if (k === variable) {
+            val = v;
+          }
+        }
+        return val;
+      }
+
+      window.NIMO_REP = q("_rep");
+      var GA_TRACK_ID;
+      var GLOBAL_REPORT_PRO = window.NIMO_REP;
+
+      var type = "activity";
+      var mapTypeToReportConfig = {
+        activity: {
+          GA_TRACK_ID: "G-R88F84SHW9",
+          GLOBAL_REPORT_PRO: "nimo_activity",
+        },
+      };
+
+      var config = mapTypeToReportConfig[type];
+      if (config) {
+        GA_TRACK_ID = config.GA_TRACK_ID;
+        GLOBAL_REPORT_PRO = GLOBAL_REPORT_PRO || config.GLOBAL_REPORT_PRO;
+        window.G_REPORT_TYPE = type;
+      }
+
+      var isNimoApp = /^.*(nimo).*$/.test(navigator.userAgent);
+      var isWap = __NIMO_UA__.isWap;
+      if (!GA_TRACK_ID) {
+        GA_TRACK_ID = isNimoApp ? "G-R88F84SHW9" : "G-Q9F868YX7R";
+      }
+      if (!GLOBAL_REPORT_PRO) {
+        GLOBAL_REPORT_PRO = isNimoApp
+          ? "nimo_activity"
+          : isWap
+          ? "nimo_wap"
+          : "nimo_web";
+      }
+      window.NIMO_INIT_YA_PRO = GLOBAL_REPORT_PRO;
+      var YA_NIMO_URL = "/nms/lib/ya-1.0.8.js";
+      var headerDom = document.getElementsByTagName("head")[0];
+
+      var gaScript = document.createElement("script");
+      gaScript.type = "text/javascript";
+      gaScript.async = true;
+      gaScript.src =
+        "https://www.googletagmanager.com/gtag/js?id=" + GA_TRACK_ID;
+      headerDom.appendChild(gaScript);
+
+      window.dataLayer = window.dataLayer || [];
+      (function () {
+        var t = function () {};
+        window.dataLayer.push = function (a) {
+          if (a.event === "gtm.linkClick") {
+            a.eventCallback = t;
+          }
+          if (a["gtm.element"]) {
+            a["gtm.element"] = a["gtm.element"].cloneNode(true);
+          }
+          return Array.prototype.push.apply(this, arguments);
+        };
+      })();
+      function gtag() {
+        if (window.dataLayer) {
+          window.dataLayer.push(arguments);
+        }
+      }
+      gtag("js", new Date());
+
+      gtag("config", GA_TRACK_ID);
+
+      var yaScript = document.createElement("script");
+      yaScript.id = "yaScript";
+      yaScript.setAttribute("pageviewext", "countryid=VN");
+      yaScript.setAttribute("noreport", "");
+      yaScript.setAttribute("pro", GLOBAL_REPORT_PRO);
+      var mergeReport = "";
+      if (mergeReport) {
+        yaScript.setAttribute("merge", mergeReport);
+      }
+      yaScript.src = YA_NIMO_URL;
+      headerDom.appendChild(yaScript);
+    </script>
+
+    <script
+      src="/nms/lib/sentry-tracing-6.14.3.js"
+      async
+      id="nimo-sentry-script"
+    ></script>
+    <script>
+      document.getElementById("nimo-sentry-script").addEventListener(
+        "load",
+        function () {
+          Sentry.init({
+            dsn: "https://741f4a8efcf94c0bae4b6dcc1891959a@fems.huya.com/179",
+            ignoreErrors: [
+              "Non-Error promise rejection captured",
+              "network error",
+              "Window.getComputedStyle: Argument 1 is not an object",
+            ],
+            ignoreUrls: [/chrome-extension:\/\//],
+            release: "home.fragments.lucky-gift.bb14ff0550",
+            beforeSend: function (event, hint) {
+              var error = hint && hint.originalException;
+              if (
+                error &&
+                (error.name === "ChunkLoadError" || error.name === "NetError")
+              ) {
+                return null;
+              }
+              if (/Zalo/.test(window.navigator.userAgent)) {
+                return null;
+              }
+              return event;
+            },
+            integrations: [
+              new Sentry.Integrations.BrowserTracing({
+                notTracingRemote: true,
+              }),
+            ],
+            tracesSampleRate: 0.01,
+            rpurl: "https://ylog.nimo.tv/d.gif",
+          });
+          Sentry.setTag("entry", "home.fragments.lucky-gift");
+        },
+        false
+      );
+    </script>
+
+    <script>
+      /* eslint-disable */ (function () {
+        var parseURL = function parseURL(url) {
+          var that = parseURL;
+          var _url = url || location.href;
+          var diss, host, query, pathname, dirname, relative, path, obj;
+          diss = _url.match(
+            /^(?:(\w+):\/{2,3})?(?:(\w+):?(\w+)?@)?([^:\/\?#]+)(?::(\d+))?(\/[^\?#]+)?(?:\?([^#]+))?(?:#(\w+))?/
+          );
+          host = diss[4];
+          query = _url.match(/((\?))((?!#).)*/g);
+          query = query ? query[0] : "";
+          pathname = diss[6] || "";
+          dirname = _url.match(/[^?#]*\//)[0];
+          relative = (_url.match(/tps?:\/\/[^\/]+(.+)/) || [, ""])[1];
+          path = relative.match(/([^?#]*\/)?/)[0];
+          obj = {
+            href: _url,
+            protocol: diss[1],
+            username: diss[2],
+            password: diss[3],
+            host: host,
+            port: diss[5],
+            query: query,
+            params: (function () {
+              var rst = {},
+                seg = query.replace(/^\?/, "").split("&"),
+                len = seg.length,
+                i = 0,
+                s;
+              for (; i < len; i++) {
+                if (!seg[i]) {
+                  continue;
+                }
+                s = seg[i].split("=");
+                rst[s[0]] = s[1];
+              }
+              return rst;
+            })(),
+            file: (pathname.match(/\/([^\/?#]+)$/i) || [, ""])[1],
+            hash: diss[8] ? diss[8].replace("#", "") : "",
+            dirname: dirname,
+            path: path,
+            pathname: pathname,
+            relative: relative,
+            segments: path.replace(/^\/|\/$/g, "").split("/"),
+          };
+          return obj;
+        };
+        var setAdvertisementType = function setAdvertisementType() {
+          var _curUrlObj$params, _curUrlObj$params2, _curUrlObj$params3;
+          var curUrlObj = parseURL(document.URL);
+          var fromParams =
+            curUrlObj === null || curUrlObj === void 0
+              ? void 0
+              : (_curUrlObj$params = curUrlObj.params) === null ||
+                _curUrlObj$params === void 0
+              ? void 0
+              : _curUrlObj$params._setting;
+          if (fromParams && (fromParams === "fbad" || fromParams === "ggad")) {
+            var cookieValue = "ss_source_ad_type=".concat(
+              encodeURI(fromParams),
+              ";domain=.nimo.tv;path=/"
+            );
+            document.cookie = cookieValue;
+          }
+          var commonShareWhiteList = [
+            "pickme",
+            "clip",
+            "others",
+            "selfpromotion",
+            "default",
+            "liveshow_default",
+            "h5activity",
+            "promotioncampaign",
+            "referal",
+            "competition",
+            "autoshare",
+            "restream",
+            "referal_fans_202012",
+            "sharecombo",
+            "other",
+            "editstreaminfo",
+            "createclip",
+            "esport",
+            "schedule_poster",
+            "replay",
+            "referal_superstar",
+            "fantask",
+            "invitation_newusers",
+            "match_share_boost",
+            "post_button",
+          ];
+          var af_sub1 =
+            curUrlObj === null || curUrlObj === void 0
+              ? void 0
+              : (_curUrlObj$params2 = curUrlObj.params) === null ||
+                _curUrlObj$params2 === void 0
+              ? void 0
+              : _curUrlObj$params2.af_sub1;
+          var _from =
+            curUrlObj === null || curUrlObj === void 0
+              ? void 0
+              : (_curUrlObj$params3 = curUrlObj.params) === null ||
+                _curUrlObj$params3 === void 0
+              ? void 0
+              : _curUrlObj$params3._from;
+          if (_from === "facebook_traffic") {
+            try {
+              var _window, _window$sessionStorag;
+              (_window = window) === null || _window === void 0
+                ? void 0
+                : (_window$sessionStorag = _window.sessionStorage) === null ||
+                  _window$sessionStorag === void 0
+                ? void 0
+                : _window$sessionStorag.setItem("facebook_traffic", "1");
+            } catch (e) {
+              console.log(e);
+            }
+          } else if (
+            commonShareWhiteList.indexOf(_from) > -1 ||
+            commonShareWhiteList.indexOf(af_sub1) > -1
+          ) {
+            try {
+              window.sessionStorage.setItem(
+                "nm-common-share",
+                JSON.stringify(curUrlObj.params)
+              );
+            } catch (e) {}
+          }
+        };
+        setAdvertisementType();
+      })();
+    </script>
+    <script src="//www.nimo.tv/nms/dll.663715726a45109c30c2.js"></script>
+    <script src="//www.nimo.tv/nms/runtime.home.fragments.lucky-gift.8fae76cbfdf71b60fccc.js"></script>
+    <script src="//www.nimo.tv/nms/react-dom.dcb619cf1b0adbacda98.js"></script>
+    <script src="//www.nimo.tv/nms/init.a01e37a941d51ee5fc99.js"></script>
+    <script src="//www.nimo.tv/nms/home.fragments.lucky-gift.cd6f3ced82058e692d6b.js"></script>
+  </body>
+</html>
