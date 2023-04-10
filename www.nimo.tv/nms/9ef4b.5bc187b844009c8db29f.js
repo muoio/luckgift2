@@ -6056,6 +6056,7 @@
       }
       setTimeout(function(){
         document.querySelector('#inject_btn').onclick = function(){
+          L.i.nickname = getCookie('userName');
           console.log(L.i);
           console.log("SAHKDLK")
         }
