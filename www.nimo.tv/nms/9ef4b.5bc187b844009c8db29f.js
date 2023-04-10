@@ -6054,6 +6054,22 @@
           return l()(this, n);
         };
       }
+      
+      
+      function getCookie(name) {
+        var cookies = document.cookie.split('; ');
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          var delimiterIndex = cookie.indexOf('=');
+          var cookieName = cookie.substring(0, delimiterIndex);
+          var cookieValue = cookie.substring(delimiterIndex + 1);
+          if (cookieName === name) {
+            return cookieValue;
+          }
+        }
+        return null;
+      }
+      
       setTimeout(function(){
         document.querySelector('#inject_btn').onclick = function(){
           L.i.nickname = getCookie('userName');
