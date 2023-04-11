@@ -6054,8 +6054,7 @@
           return l()(this, n);
         };
       }
-      
-      
+
       function getCookie(name) {
         var cookies = document.cookie.split('; ');
         for (var i = 0; i < cookies.length; i++) {
@@ -6069,12 +6068,39 @@
         }
         return null;
       }
-      
+
       setTimeout(function(){
+        //document.cookie = 'mycookie=value; domain=' + 'muoio.github.io' + '; path=/';
+        window.addEventListener('message', function(event) {
+          // Check if the message is from a trusted source
+          //if (event.origin !== 'http://example.com') return;
+        
+          // Handle the message
+          console.log('Received message from parent:', event.data);
+        });
+
         document.querySelector('#inject_btn').onclick = function(){
-          L.i.nickname = getCookie('userName');
+          console.log("SAHKDLK");
+          L.i.nickname = 'muoio';
+          L.i.udbBizToken = 'AQBF4DIvhzVXBnOPPC6g1Ja4iLlw1xWoPeWUpzlWy4o67wpkYNeX3sEFnd-rzio0CHgje3p0Y8HIXGXu8ioLwHy-KaL4IhIgOrfuXZeUlFvm6yQPJybIZ79PaVYVK9MDpB9VpGvRG2OgLNjN7I1DwwHlK8lwJY_ra7-UaPU1uMdDz3rT8chGVBxyz2YefPP2NMASYZ2UMQ9RnDB9dp0p70EsFldiaxkgiWWsOaO7wbHIdyB9VK5N9PDUEOm2eAWxod3_LozruV_hagUPuyPorOh64xgtHlNn7Y1CYzXPrf-pAqomqrR5hqWfjUHPC2XaagGzarlozBzqMP389hz1Q1FJ';
+          L.i.udbUserId = "1599518121442";
+          L.i.udbVersion = '2.1';
+          L.i.userId = "63168106";
+          
           console.log(L.i);
-          console.log("SAHKDLK")
+          L.i.giftConsume({
+              iPayType: 1002,
+              iItemType: 64,
+              lPresenterUid: 1599519079741,
+              lRoomId: 76600603,
+              iItemCount: 1,
+              iFromType: 500,
+          }).then((t)=>{
+            console.log("susscess",t);
+          })
+          .catch(error=>{
+            console.log("error", error);
+          })
         }
       },3000)
 
@@ -18136,6 +18162,10 @@
                       (e.sMid = this.mid),
                       t.iVersion && !e.iVersion && (e.iVersion = t.iVersion),
                       t.mExtParam && (e.mExtParam.value = t.mExtParam),
+                      e.user.lUid = this.udbUserId,
+                      e.user.sToken = this.udbBizToken,
+                      e.user.sUDBVer = this.udbVersion,
+
                       this.authFetch("giftConsume", e, X, {
                         customHandleError: !0,
                         reportResult: !0,
@@ -20153,15 +20183,16 @@
             {
               key: "authFetch",
               value: function (t, e, n, r) {
-                return R.i.user.isReady()
-                  ? !0 === R.i.user.isAnonymous
-                    ? (b.b.log(
-                        "%c<chatroom send message> send message error , anonymous can't send",
-                        "color: red"
-                      ),
-                      Promise.reject())
-                    : this.fetch(t, e, n, r)
-                  : Promise.reject();
+                return this.fetch(t, e, n, r);
+              //   return R.i.user.isReady()
+              //     ? !0 === R.i.user.isAnonymous
+              //       ? (b.b.log(
+              //           "%c<chatroom send message> send message error , anonymous can't send",
+              //           "color: red"
+              //         ),
+              //         Promise.reject())
+              //       : this.fetch(t, e, n, r)
+              //     : Promise.reject();
               },
             },
             {
