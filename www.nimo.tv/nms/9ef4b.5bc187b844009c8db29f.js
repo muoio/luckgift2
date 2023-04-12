@@ -6083,7 +6083,7 @@
                       iPayType: 1002,
                       iItemType: 64,
                       lPresenterUid: parseInt(params._anchorId),
-                      lRoomId: parseInt(params.roomId),
+                      lRoomId: parseInt(params._roomId),
                       iItemCount: 1,
                       iFromType: 500,
                   }).then((t)=>{
@@ -18170,7 +18170,6 @@
                       e.user.sUDBVer = this.udbVersion,
                       e.user.lUid = this.lUid,
                       e.user.sGuid = this.sGuid,
-                      e.lRoomId = t.lRoomId,
 
                       this.authFetch("giftConsume", e, X, {
                         customHandleError: !0,
