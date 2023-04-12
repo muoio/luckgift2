@@ -6079,10 +6079,10 @@
           let current_time = time_to_int(h,m,s);
 
           time_arr = JSON.parse(localStorage.time_pivot);
-          for(let i=0;i<time_arr.length;++i){
+          for(let i=time_arr.length-1;i>=0;--i){
             let time_parts = time_arr[i][0].split(':');
             let time_int = time_to_int(time_parts[0],time_parts[1],time_parts[2]);
-            if (current_time < time_int) return i-1;
+            if (current_time >= time_int) return i;
           }
           return -1;
         }
