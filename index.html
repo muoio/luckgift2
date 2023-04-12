@@ -218,11 +218,63 @@
     />
   </head>
 
-  <body class="nimo-theme-dark page-lucky-gift">
-    <div id="inject_div" style="display: block !important;">
+  <body>
+    <div id="inject_div" style="display: block !important">
+      <div style="padding-top: 20px;">
+        <label>Chọn hộp</label>
+        <select name="cars" id="bet_amount" class="nice_input">
+          <option value="30">Hộp thường</option>
+          <option value="300">Hộp cao cấp</option>
+        </select>
+      </div>
+
+      <div style="padding-top: 20px;">
+        <label for="period">Số gói tin của 1 lần gửi </label>
+        <input type="number" id='check_time' class='nice_input' min="0">
+      </div>
+      <table>
+        <tr>
+          <th>Mốc thời gian</th>
+          <th>Chu kỳ gửi (ms)</th>
+          <th><button>➕</button></th>
+        </tr>
+        <tr>
+          <td>
+            <input type="time" class="time_auto_start" step="1" >
+          </td>
+          <td>
+            <input type="number" class='click_period nice_input' min="0">
+          </td>
+          <td>          
+            <button>➖</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="time" class="time_auto_start" step="1" >
+          </td>
+          <td>          
+            <input type="number" class='click_period nice_input' min="0">
+          </td>
+          <td>          
+            <button>➖</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="time" class="time_auto_start" step="1" >
+          </td>
+          <td>          
+            <input type="number" class='click_period nice_input' min="0">
+          </td>
+          <td>          
+            <button>➖</button>
+          </td>
+        </tr>
+      </table>
       <button id="inject_btn">Click me</button>
     </div>
-    <div id="page-lucky-gift-container" style="display: none;"></div>
+    <div id="page-lucky-gift-container" style="display: none" class="nimo-theme-dark page-lucky-gift"></div>
     <script>
       function q(variable) {
         var query = location.search.substring(1);
