@@ -236,44 +236,11 @@
         <label for="period">Số gói tin của 1 lần gửi </label>
         <input type="number" id='num_per_send' min="0">
       </div>
-      <table>
+      <table id="pivot_table">
         <tr>
           <th>Mốc thời gian</th>
           <th>Chu kỳ gửi (ms)</th>
           <th><button class="add_pivot">➕</button></th>
-        </tr>
-        <tr>
-          <td>
-            <input type="time" class="time_start" step="1" >
-          </td>
-          <td>
-            <input type="number" class='send_period' min="0">
-          </td>
-          <td>          
-            <button class="delete_pivot">➖</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="time" class="time_start" step="1" >
-          </td>
-          <td>          
-            <input type="number" class='send_period' min="0">
-          </td>
-          <td>          
-            <button class="delete_pivot">➖</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="time" class="time_start" step="1" >
-          </td>
-          <td>          
-            <input type="number" class='send_period' min="0">
-          </td>
-          <td>          
-            <button class="delete_pivot">➖</button>
-          </td>
         </tr>
       </table>
       <button id="run_inject">START</button>

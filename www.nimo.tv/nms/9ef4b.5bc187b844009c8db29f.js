@@ -6056,11 +6056,82 @@
       }
 
       function inject(){
+        let send_success_num = 0;
+        let params;
+        let cookies;
+        let iStatus = 0;
+        let index = -1;
+        let current_period = 1000;
+        let time_arr;
+
+        let update_panel_status_loop = setInterval(get_panel_status,500);
+        let update_index_loop = setInterval(update_index,100);
+
+        function time_to_int(h,m,s){
+          return parseInt(h)*60*60*1000+parseInt(m)*60*1000+parseInt(s)*1000;
+        }
+        function get_index(){
+          let d = new Date();
+          let m = d.getMinutes();
+          let h = d.getHours();
+          let s = d.getSeconds();
+          let current_time = time_to_int(h,m,s);
+
+          time_arr = JSON.parse(localStorage.time_pivot);
+          for(let i=0;i<time_arr.length;++i){
+            let time_parts = time_arr[i][0].split(':');
+            let time_int = time_to_int(time_parts[0],time_parts[1],time_parts[2]);
+            if (current_time >= time_int) return i;
+          }
+          return -1;
+        }
+
+        function get_panel_status(){
+          q.a.getBoxPanelInfo({lRoomId:params._roomId,
+            iLcid:_anchorLang}).then(t=>t.text())
+            .then(t=>t.json())
+            .then(t=>{
+              iStatus = parseInt(t.tScoreInfo.iStatus)
+            })
+            .catch(error=>console.log)
+        }
+
+        function update_index(){
+          let new_index = get_index();
+          current_period = new_index>-1 ? time_arr[new_index]:1000;
+
+          if (index == -1 && new_index>-1) send_gift();
+          index = new_index;
+        }
+
+        function send_gift(){
+          let num_per_send = parseInt(localStorage.num_per_send);
+          console.log('send_gift ', num_per_send, parseInt(localStorage.bet_amount));
+          send_success_num++;
+          document.getElementById('send_success_num').textContent = send_success_num;
+
+          // while(num_per_send--)
+          //   L.i.giftConsume({
+          //     iPayType: 1002,
+          //     iItemType: 64,
+          //     lPresenterUid: parseInt(params._anchorId),
+          //     lRoomId: parseInt(params._roomId),
+          //     iItemCount: 1,//parseInt(localStorage.bet_amount),
+          //     iFromType: 500,
+          //   }).then((t)=>{
+          //     console.log("susscess",t);
+          //     send_success_num++;
+          //     document.getElementById('send_success_num').textContent = send_success_num;
+          //   })
+          //   .catch(error=>{
+          //     console.log("error", error);
+          //     document.getElementById('send_success_num').textContent += ' error';
+          //   })
+          if(index>-1) setTimeout(send_gift, current_period);
+        }
+
         window.addEventListener('message', function(event) {
-          let message = JSON.parse(event.data);   
-          let params;
-          let cookies;
-          let send_success_num = 0;
+          let message = JSON.parse(event.data);  
 
           if(message.greeting == 'load_variables'){
             cookies = message.cookies;
@@ -6078,26 +6149,17 @@
                 if (run_inject.style.backgroundColor == "lightpink"){
                     run_inject.textContent = "START";
                     run_inject.style.backgroundColor = "greenyellow"
-
-                    L.i.giftConsume({
-                      iPayType: 1002,
-                      iItemType: 64,
-                      lPresenterUid: parseInt(params._anchorId),
-                      lRoomId: parseInt(params._roomId),
-                      iItemCount: 1,
-                      iFromType: 500,
-                  }).then((t)=>{
-                    console.log("susscess",t);
-                    send_success_num++;
-                    document.getElementById('send_success_num').value = send_success_num;
-                  })
-                  .catch(error=>{
-                    console.log("error", error);
-                  })
+                    clearInterval(update_panel_status_loop);
+                    clearInterval(update_index_loop);
+                    index = -1;
                 }
                 else {
                     run_inject.textContent = "STOP";
                     run_inject.style.backgroundColor = "lightpink"
+
+                    update_panel_status_loop = setInterval(get_panel_status,500);
+                    update_index_loop = setInterval(update_index,100);
+                    //send_gift();
                 }
             });
           }
