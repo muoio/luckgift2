@@ -56,7 +56,7 @@ function init(){
     if (!localStorage.bet_amount) localStorage.bet_amount = 1;
     if (!localStorage.num_per_send) localStorage.num_per_send = 1;
     if(!localStorage.time_pivot) {
-        let new_time_pivot = [{"21:00:00": 1000}]
+        let new_time_pivot = [["21:00:00", 1000]]
         localStorage.time_pivot = JSON.stringify(new_time_pivot);
     }
 
