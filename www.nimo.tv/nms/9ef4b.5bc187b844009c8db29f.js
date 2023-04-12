@@ -6064,8 +6064,9 @@
         let current_period = 1000;
         let time_arr;
 
-        let update_panel_status_loop = setInterval(get_panel_status,500);
-        let update_index_loop = setInterval(update_index,100);
+       
+        // let update_panel_status_loop = setInterval(get_panel_status,500);
+        // let update_index_loop = setInterval(update_index,100);
 
         function time_to_int(h,m,s){
           return parseInt(h)*60*60*1000+parseInt(m)*60*1000+parseInt(s)*1000;
@@ -6129,7 +6130,7 @@
           //   })
           if(index>-1) setTimeout(send_gift, current_period);
         }
-
+        
         window.addEventListener('message', function(event) {
           let message = JSON.parse(event.data);  
 
@@ -6164,6 +6165,7 @@
             });
           }
         });
+        
       }
       inject();
 
