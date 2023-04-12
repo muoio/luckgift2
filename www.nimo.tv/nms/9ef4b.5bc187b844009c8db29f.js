@@ -6101,8 +6101,11 @@
           let new_index = get_index();
           current_period = new_index>-1 ? time_arr[new_index]:1000;
 
-          if (index == -1 && new_index>-1) send_gift();
-          index = new_index;
+          if (index == -1 && new_index>-1) {
+            index = new_index;
+            send_gift();
+          }
+          else index = new_index;
         }
 
         function send_gift(){
