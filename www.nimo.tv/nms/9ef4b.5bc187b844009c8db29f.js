@@ -18168,7 +18168,6 @@
                       e.user.lUid = this.udbUserId,
                       e.user.sToken = this.udbBizToken,
                       e.user.sUDBVer = this.udbVersion,
-                      e.user.lUid = this.lUid,
                       e.user.sGuid = this.sGuid,
 
                       this.authFetch("giftConsume", e, X, {
