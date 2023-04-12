@@ -18164,9 +18164,13 @@
                       (e.sMid = this.mid),
                       t.iVersion && !e.iVersion && (e.iVersion = t.iVersion),
                       t.mExtParam && (e.mExtParam.value = t.mExtParam),
-                      // e.user.lUid = this.udbUserId,
-                      // e.user.sToken = this.udbBizToken,
-                      // e.user.sUDBVer = this.udbVersion,
+
+                      e.user.lUid = this.udbUserId,
+                      e.user.sToken = this.udbBizToken,
+                      e.user.sUDBVer = this.udbVersion,
+                      e.user.lUid = this.lUid,
+                      e.user.sGuid = this.sGuid,
+                      e.lRoomId = t.lRoomId,
 
                       this.authFetch("giftConsume", e, X, {
                         customHandleError: !0,
