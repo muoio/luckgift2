@@ -6100,29 +6100,41 @@
           })
         });
 
-        document.querySelector('#inject_btn').onclick = function(){
-          console.log("SAHKDLK");
-          // L.i.nickname = 'muoio';
-          // L.i.udbBizToken = 'AQBF4DIvhzVXBnOPPC6g1Ja4iLlw1xWoPeWUpzlWy4o67wpkYNeX3sEFnd-rzio0CHgje3p0Y8HIXGXu8ioLwHy-KaL4IhIgOrfuXZeUlFvm6yQPJybIZ79PaVYVK9MDpB9VpGvRG2OgLNjN7I1DwwHlK8lwJY_ra7-UaPU1uMdDz3rT8chGVBxyz2YefPP2NMASYZ2UMQ9RnDB9dp0p70EsFldiaxkgiWWsOaO7wbHIdyB9VK5N9PDUEOm2eAWxod3_LozruV_hagUPuyPorOh64xgtHlNn7Y1CYzXPrf-pAqomqrR5hqWfjUHPC2XaagGzarlozBzqMP389hz1Q1FJ';
-          // L.i.udbUserId = "1599518121442";
-          // L.i.udbVersion = '2.1';
-          // L.i.userId = "63168106";
+        let run_inject = document.getElementById('run_inject');
+        run_inject.addEventListener('click', function(){
+            if (run_inject.style.backgroundColor == "lightpink"){
+                run_inject.textContent = "START";
+                run_inject.style.backgroundColor = "greenyellow"
+            }
+            else {
+                run_inject.textContent = "STOP";
+                run_inject.style.backgroundColor = "lightpink"
+            }
+        });
+
+        // document.querySelector('#run_inject').onclick = function(){
+        //   console.log("SAHKDLK");
+        //   // L.i.nickname = 'muoio';
+        //   // L.i.udbBizToken = 'AQBF4DIvhzVXBnOPPC6g1Ja4iLlw1xWoPeWUpzlWy4o67wpkYNeX3sEFnd-rzio0CHgje3p0Y8HIXGXu8ioLwHy-KaL4IhIgOrfuXZeUlFvm6yQPJybIZ79PaVYVK9MDpB9VpGvRG2OgLNjN7I1DwwHlK8lwJY_ra7-UaPU1uMdDz3rT8chGVBxyz2YefPP2NMASYZ2UMQ9RnDB9dp0p70EsFldiaxkgiWWsOaO7wbHIdyB9VK5N9PDUEOm2eAWxod3_LozruV_hagUPuyPorOh64xgtHlNn7Y1CYzXPrf-pAqomqrR5hqWfjUHPC2XaagGzarlozBzqMP389hz1Q1FJ';
+        //   // L.i.udbUserId = "1599518121442";
+        //   // L.i.udbVersion = '2.1';
+        //   // L.i.userId = "63168106";
           
-          // console.log(L.i);
-          // L.i.giftConsume({
-          //     iPayType: 1002,
-          //     iItemType: 64,
-          //     lPresenterUid: 1599519079741,
-          //     lRoomId: 76600603,
-          //     iItemCount: 1,
-          //     iFromType: 500,
-          // }).then((t)=>{
-          //   console.log("susscess",t);
-          // })
-          // .catch(error=>{
-          //   console.log("error", error);
-          // })
-        }
+        //   // console.log(L.i);
+        //   // L.i.giftConsume({
+        //   //     iPayType: 1002,
+        //   //     iItemType: 64,
+        //   //     lPresenterUid: 1599519079741,
+        //   //     lRoomId: 76600603,
+        //   //     iItemCount: 1,
+        //   //     iFromType: 500,
+        //   // }).then((t)=>{
+        //   //   console.log("susscess",t);
+        //   // })
+        //   // .catch(error=>{
+        //   //   console.log("error", error);
+        //   // })
+        // }
       },3000)
 
       var Wt = K.b.log,
