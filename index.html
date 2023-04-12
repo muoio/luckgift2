@@ -219,60 +219,61 @@
   </head>
 
   <body>
-    <div id="inject_div" style="display: block !important">
+    <div id="inject_dashboard">
       <div style="padding-top: 20px;">
         <label>Chọn hộp</label>
-        <select name="cars" id="bet_amount" class="nice_input">
-          <option value="30">Hộp thường</option>
-          <option value="300">Hộp cao cấp</option>
+        <select name="cars" id="bet_amount">
+          <option value="1">Hộp thường</option>
+          <option value="10">Hộp cao cấp</option>
         </select>
       </div>
 
       <div style="padding-top: 20px;">
         <label for="period">Số gói tin của 1 lần gửi </label>
-        <input type="number" id='check_time' class='nice_input' min="0">
+        <input type="number" id='num_per_send' min="0">
       </div>
       <table>
         <tr>
           <th>Mốc thời gian</th>
           <th>Chu kỳ gửi (ms)</th>
-          <th><button>➕</button></th>
+          <th><button class="add_pivot">➕</button></th>
         </tr>
         <tr>
           <td>
-            <input type="time" class="time_auto_start" step="1" >
+            <input type="time" class="time_start" step="1" >
           </td>
           <td>
-            <input type="number" class='click_period nice_input' min="0">
+            <input type="number" class='send_period' min="0">
           </td>
           <td>          
-            <button>➖</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="time" class="time_auto_start" step="1" >
-          </td>
-          <td>          
-            <input type="number" class='click_period nice_input' min="0">
-          </td>
-          <td>          
-            <button>➖</button>
+            <button class="delete_pivot">➖</button>
           </td>
         </tr>
         <tr>
           <td>
-            <input type="time" class="time_auto_start" step="1" >
+            <input type="time" class="time_start" step="1" >
           </td>
           <td>          
-            <input type="number" class='click_period nice_input' min="0">
+            <input type="number" class='send_period' min="0">
           </td>
           <td>          
-            <button>➖</button>
+            <button class="delete_pivot">➖</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="time" class="time_start" step="1" >
+          </td>
+          <td>          
+            <input type="number" class='send_period' min="0">
+          </td>
+          <td>          
+            <button class="delete_pivot">➖</button>
           </td>
         </tr>
       </table>
-      <button id="inject_btn">Click me</button>
+      <button id="run_inject">START</button>
+      <script src="./www.nimo.tv/nms/inject_dashboard.js"></script>
     </div>
     <div id="page-lucky-gift-container" style="display: none" class="nimo-theme-dark page-lucky-gift"></div>
     <script>
