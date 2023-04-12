@@ -6082,7 +6082,7 @@
           for(let i=0;i<time_arr.length;++i){
             let time_parts = time_arr[i][0].split(':');
             let time_int = time_to_int(time_parts[0],time_parts[1],time_parts[2]);
-            if (current_time >= time_int) return i;
+            if (current_time < time_int) return i-1;
           }
           return -1;
         }
