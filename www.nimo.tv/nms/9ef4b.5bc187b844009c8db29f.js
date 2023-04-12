@@ -6130,7 +6130,9 @@
           //   .catch(error=>{
           //     console.log("error", error);
           //     document.getElementById('send_success_num').textContent += ' error';
-          //   })
+          //   })\
+          console.log(time_arr);
+          console.log(current_period);
           if(index>-1) setTimeout(send_gift, current_period);
         }
 
