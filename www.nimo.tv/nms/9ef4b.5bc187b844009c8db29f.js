@@ -6099,7 +6099,7 @@
 
         function update_index(){
           let new_index = get_index();
-          current_period = new_index>-1 ? time_arr[new_index]:1000;
+          current_period = new_index>-1 ? time_arr[new_index][1]:1000;
 
           if (index == -1 && new_index>-1) {
             index = new_index;
