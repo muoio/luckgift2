@@ -6088,7 +6088,7 @@
 
         function get_panel_status(){
           q.a.getBoxPanelInfo({lRoomId:params._roomId,
-            iLcid:_anchorLang}).then(t=>t.text())
+            iLcid:params._anchorLang}).then(t=>t.text())
             .then(t=>t.json())
             .then(t=>{
               iStatus = parseInt(t.tScoreInfo.iStatus)
