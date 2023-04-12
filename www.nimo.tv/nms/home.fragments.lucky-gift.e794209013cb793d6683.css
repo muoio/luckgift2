@@ -2,6 +2,9 @@
     width: 400px;
     height: 500px;
 }
+button{
+    cursor: pointer;
+}
 .add_pivot{
     background-color: transparent;
     text-align: center;
