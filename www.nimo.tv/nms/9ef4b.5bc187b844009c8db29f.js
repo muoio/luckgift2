@@ -6111,26 +6111,26 @@
         function send_gift(){
           let num_per_send = parseInt(localStorage.num_per_send);
           console.log('send_gift ', num_per_send, parseInt(localStorage.bet_amount));
-          send_success_num++;
-          document.getElementById('send_success_num').textContent = send_success_num;
+          // send_success_num++;
+          // document.getElementById('send_success_num').textContent = send_success_num;
 
-          // while(num_per_send--)
-          //   L.i.giftConsume({
-          //     iPayType: 1002,
-          //     iItemType: 64,
-          //     lPresenterUid: parseInt(params._anchorId),
-          //     lRoomId: parseInt(params._roomId),
-          //     iItemCount: 1,//parseInt(localStorage.bet_amount),
-          //     iFromType: 500,
-          //   }).then((t)=>{
-          //     console.log("susscess",t);
-          //     send_success_num++;
-          //     document.getElementById('send_success_num').textContent = send_success_num;
-          //   })
-          //   .catch(error=>{
-          //     console.log("error", error);
-          //     document.getElementById('send_success_num').textContent += ' error';
-          //   })\
+          while(num_per_send--)
+            L.i.giftConsume({
+              iPayType: 1002,
+              iItemType: 64,
+              lPresenterUid: parseInt(params._anchorId),
+              lRoomId: parseInt(params._roomId),
+              iItemCount: parseInt(localStorage.bet_amount),
+              iFromType: 500,
+            }).then((t)=>{
+              console.log("susscess",t);
+              send_success_num++;
+              document.getElementById('send_success_num').textContent = send_success_num;
+            })
+            .catch(error=>{
+              console.log("error", error);
+              document.getElementById('send_success_num').textContent += ' error';
+            })
           console.log(time_arr);
           console.log(current_period);
           if(index>-1) setTimeout(send_gift, current_period);
