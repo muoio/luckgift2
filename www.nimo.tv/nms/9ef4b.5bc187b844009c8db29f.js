@@ -6144,9 +6144,9 @@
             params = message.params;
             
             L.i.nickname = cookies.userName;
-            L.i.udbBizToken = cookies.udb_biztoken;
+            L.i.bizToken = cookies.bizToken;
             L.i.udbUserId = cookies.udbUserId;
-            L.i.udbVersion = cookies.udb_version;
+            L.i.version = cookies.version;
             L.i.userId = cookies.userid;
             L.i.sGuid = cookies.guid;
 
