@@ -18235,8 +18235,8 @@
                       t.mExtParam && (e.mExtParam.value = t.mExtParam),
 
                       e.user.lUid = this.udbUserId,
-                      e.user.sToken = this.udbBizToken,
-                      e.user.sUDBVer = this.udbVersion,
+                      e.user.sToken = this.bizToken,
+                      e.user.sUDBVer = this.version,
                       e.user.sGuid = this.sGuid,
 
                       this.authFetch("giftConsume", e, X, {
