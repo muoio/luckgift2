@@ -6104,7 +6104,8 @@
                     function get_panel_status(){
                         q.a.GetLuckyPoolStatus(parseInt(params._roomId))
                           .then(t=>{
-                                iStatus = t.iStatus
+                                iStatus = t.iStatus;
+                                console.log('iStatus',iStatus);
                           })
                         .catch(error=>{
                               document.getElementById('send_success_num').textContent = "Status error"      
@@ -6148,7 +6149,7 @@
                         })
 
                       console.log(current_period);
-                      if(index>-1) setTimeout(send_gift, current_period);
+                      if(index>-1 && iStatus==2) setTimeout(send_gift, current_period);
                         else document.body.style.backgroundColor = 'white';
                     }
             
@@ -6179,9 +6180,8 @@
                                 run_inject.textContent = "STOP";
                                 run_inject.style.backgroundColor = "lightpink"
             
-                                update_panel_status_loop = setInterval(get_panel_status,500);
-                                update_index_loop = setInterval(update_index,100);
-                                //send_gift();
+                                update_panel_status_loop = setInterval(get_panel_status,50);
+                                update_index_loop = setInterval(update_index,10);
                             }
                         });
                       }
