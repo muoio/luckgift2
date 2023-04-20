@@ -6137,7 +6137,7 @@
                           lPresenterUid: parseInt(params._anchorId),
                           lRoomId: parseInt(params._roomId),
                           iItemCount: parseInt(localStorage.bet_amount),
-                          iFromType: 500,
+                          iFromType: parseInt(localStorage.client_type)
                         }).then((t)=>{
                           console.log("susscess",t);
                           send_success_num++;

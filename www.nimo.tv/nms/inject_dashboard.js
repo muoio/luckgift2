@@ -1,3 +1,4 @@
+let client_type = document.getElementById('client_type');
 let bet_amount = document.getElementById('bet_amount');
 let num_per_send = document.getElementById('num_per_send');
 let pivot_table = document.getElementById('pivot_table');
@@ -54,6 +55,7 @@ function init(){
     //run_inject.style.backgroundColor = 'greenyelow';
     localStorage.run_inject = true;
     if (!localStorage.bet_amount) localStorage.bet_amount = 1;
+    if (!localStorage.client_type) localStorage.client_type = 500;
     if (!localStorage.num_per_send) localStorage.num_per_send = 1;
     if(!localStorage.time_pivot) {
         let new_time_pivot = [["21:00:00", 1000]]
@@ -61,6 +63,7 @@ function init(){
     }
 
     bet_amount.value = parseInt(localStorage.bet_amount);
+    client_type.value = parseInt(localStorage.client_type);
     num_per_send.value = parseInt(localStorage.num_per_send);
     pivot_arr = JSON.parse(localStorage.time_pivot)
     console.log(pivot_arr);
@@ -81,6 +84,10 @@ add_pivot.onclick = function(){
 bet_amount.addEventListener('input',()=>{
     localStorage.bet_amount = bet_amount.value;
 });
+
+client_type.addEventListener('input',()=>{
+    localStorage.client_type = client_type.value;
+})
 
 num_per_send.addEventListener('input',()=>{
     localStorage.num_per_send = num_per_send.value;
