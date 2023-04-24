@@ -6112,6 +6112,16 @@
                               iStatus = 0;
                         })
                     }
+                    function get_prize_list(iStart, iCount){
+                      console.log(q.a.getUserPrizeRecordList)
+                      q.a.getUserPrizeRecordList({iStart:iStart, iCount:iCount})
+                      .then(t=>{
+                        console.log('get_prize_list', t);
+                      })
+                      .catch(e=>{
+                        console.log(e);
+                      })
+                    }
             
                     function update_index(){
                       let new_index = get_index();
@@ -6184,6 +6194,11 @@
                                 update_index_loop = setInterval(update_index,10);
                             }
                         });
+
+                        let download_results = this.document.getElementById('download_results');
+                        download_results.addEventListener('click', function(){
+                          get_prize_list(0, 50);
+                        })
                       }
                     });
                     
@@ -6304,7 +6319,7 @@
                         r.pollingKey ||
                           (r.pollingKey = setInterval(function () {
                             r.getPanelInfo();
-                          }, 1e4));
+                          }, 1e40));
                     })
                     .catch(function () {
                       r.pollingKey &&

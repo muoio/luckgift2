@@ -46,3 +46,13 @@ button{
 #client_type{
     font-size: large;
 }
+#download_results{
+    font-size: large;
+    background-color: aqua;
+    border-radius: 10px;
+}
+#num_days_result{
+    width:100px;
+    font-size: large;
+    text-align: center;
+}

@@ -3,6 +3,7 @@ let bet_amount = document.getElementById('bet_amount');
 let num_per_send = document.getElementById('num_per_send');
 let pivot_table = document.getElementById('pivot_table');
 let add_pivot = document.querySelector('.add_pivot');
+let num_days_result = document.getElementById('num_days_result');
 let pivot_arr = [];
 
 function add_new_pivot(pivot_info){
@@ -54,6 +55,7 @@ function add_new_pivot(pivot_info){
 function init(){
     //run_inject.style.backgroundColor = 'greenyelow';
     localStorage.run_inject = true;
+    num_days_result.value = 1;
     if (!localStorage.bet_amount) localStorage.bet_amount = 1;
     if (!localStorage.client_type) localStorage.client_type = 500;
     if (!localStorage.num_per_send) localStorage.num_per_send = 1;
